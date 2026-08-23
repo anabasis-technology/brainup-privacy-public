@@ -31,7 +31,8 @@
 
   .sheet{max-width:680px;margin:0 auto;}
 
-  .brandrow{display:flex;align-items:center;gap:12px;margin-bottom:40px;}
+  .brandrow{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:40px;}
+  .brand{display:flex;align-items:center;gap:12px;}
   .mark{width:34px;height:34px;flex:none;}
   .wordmark{
     font-weight:800;
@@ -40,6 +41,29 @@
     color:var(--text);
   }
   .wordmark span{color:var(--accent);}
+
+  .langswitch{
+    display:flex;
+    background:var(--surface-2);
+    border:1px solid var(--border);
+    border-radius:999px;
+    padding:3px;
+    gap:2px;
+  }
+  .langswitch button{
+    appearance:none;
+    border:none;
+    background:transparent;
+    color:var(--text-muted);
+    font-family:inherit;
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:0.03em;
+    padding:6px 13px;
+    border-radius:999px;
+    cursor:pointer;
+  }
+  .langswitch button.active{background:var(--accent);color:#241705;}
 
   .eyebrow{
     font-size:12px;
@@ -158,107 +182,244 @@
   }
   footer .name{color:var(--text-muted);font-weight:600;}
 
+  [data-lang-block="en"]{display:none;}
+
   @media (max-width:520px){
     body{padding:44px 18px 72px;}
     .meta{gap:10px 18px;}
+    .brandrow{flex-wrap:wrap;}
   }
 </style>
 
 <div class="sheet">
   <div class="brandrow">
-    <svg class="mark" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <rect width="34" height="34" rx="9" fill="#0f1c40"/>
-      <rect x="0.5" y="0.5" width="33" height="33" rx="8.5" stroke="#f5b53a" stroke-opacity="0.35"/>
-      <path d="M11 22.5V11.5C11 11.5 13.2 10 17 10C20.8 10 21.8 12 20.4 13.4C19.4 14.4 17.8 14.4 17.8 14.4C17.8 14.4 21.6 14.6 22 17.6C22.4 20.6 19.2 22.5 16 22.5H11Z" stroke="#f5b53a" stroke-width="1.6" stroke-linejoin="round"/>
-      <line x1="11" y1="16.6" x2="16.6" y2="16.6" stroke="#f5b53a" stroke-width="1.6" stroke-linecap="round"/>
-    </svg>
-    <div class="wordmark">Brain<span>Up</span></div>
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="34" height="34" rx="9" fill="#0f1c40"/>
+        <rect x="0.5" y="0.5" width="33" height="33" rx="8.5" stroke="#f5b53a" stroke-opacity="0.35"/>
+        <path d="M11 22.5V11.5C11 11.5 13.2 10 17 10C20.8 10 21.8 12 20.4 13.4C19.4 14.4 17.8 14.4 17.8 14.4C17.8 14.4 21.6 14.6 22 17.6C22.4 20.6 19.2 22.5 16 22.5H11Z" stroke="#f5b53a" stroke-width="1.6" stroke-linejoin="round"/>
+        <line x1="11" y1="16.6" x2="16.6" y2="16.6" stroke="#f5b53a" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <div class="wordmark">Brain<span>Up</span></div>
+    </div>
+    <div class="langswitch" role="group" aria-label="Language / Langue">
+      <button type="button" data-lang-btn="fr">FR</button>
+      <button type="button" data-lang-btn="en">EN</button>
+    </div>
   </div>
 
-  <p class="eyebrow">Confidentialité</p>
-  <h1>Politique de confidentialité</h1>
-  <p class="lede">Ce que BrainUp fait — et surtout ne fait pas — avec tes données. En clair, sans jargon inutile.</p>
+  <div data-lang-block="fr">
+    <p class="eyebrow">Confidentialité</p>
+    <h1>Politique de confidentialité</h1>
+    <p class="lede">Ce que BrainUp fait — et surtout ne fait pas — avec tes données. En clair, sans jargon inutile.</p>
 
-  <div class="meta">
-    <span><strong>Dernière mise à jour</strong> · 28 juillet 2026</span>
-    <span><strong>Éditeur</strong> · Anabasis Technology</span>
-    <span><strong>Contact</strong> · <a href="mailto:support@anabasis-technology.com">support@anabasis-technology.com</a></span>
+    <div class="meta">
+      <span><strong>Dernière mise à jour</strong> · 28 juillet 2026</span>
+      <span><strong>Éditeur</strong> · Anabasis Technology</span>
+      <span><strong>Contact</strong> · <a href="mailto:support@anabasis-technology.com">support@anabasis-technology.com</a></span>
+    </div>
+
+    <section>
+      <span class="secnum">01</span>
+      <h2>Le principe : le moins de données possible</h2>
+      <p>BrainUp est conçu pour fonctionner sans compte, sans identifiant, sans profil. Ta série, ton niveau, tes succès et tes préférences sont enregistrés <strong>uniquement sur ton téléphone</strong>, jamais sur un serveur. Si tu supprimes l'app, tout disparaît avec elle.</p>
+    </section>
+
+    <section>
+      <span class="secnum">02</span>
+      <h2>Ce qui reste sur ton appareil, jamais transmis</h2>
+      <ul>
+        <li>Ton prénom (si tu le renseignes à l'inscription)</li>
+        <li>Ta série, ton niveau, ton score cérébral et tes succès</li>
+        <li>Ton objectif d'entraînement et tes préférences de rythme</li>
+        <li>L'heure de tes rappels quotidiens, gérés par le système de notifications de ton téléphone</li>
+      </ul>
+      <p>Ces informations ne quittent jamais ton appareil. BrainUp n'a ni compte utilisateur, ni base de données, ni serveur qui les reçoit.</p>
+    </section>
+
+    <section>
+      <span class="secnum">03</span>
+      <h2>Ce qui est traité pour l'abonnement Premium</h2>
+      <p>Si tu souscris à BrainUp Premium, l'achat est géré par <strong>Apple</strong> (paiement) et <strong>RevenueCat</strong>, notre prestataire de gestion d'abonnements. RevenueCat reçoit un identifiant anonyme lié à ton appareil et l'historique de tes achats, uniquement pour savoir si ton abonnement est actif — jamais ton nom, ton e-mail ou tes moyens de paiement, que BrainUp ne voit lui-même jamais.</p>
+      <div class="card">
+        <p class="card-title">Sous-traitants concernés</p>
+        <p>Apple (App Store) et RevenueCat, Inc. Consulte leurs politiques respectives : <a href="https://www.apple.com/legal/privacy/fr-ww/" target="_blank" rel="noopener">politique d'Apple</a> et <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">politique de RevenueCat</a>.</p>
+      </div>
+    </section>
+
+    <section>
+      <span class="secnum">04</span>
+      <h2>Ce que BrainUp ne fait pas</h2>
+      <ul>
+        <li>Pas de publicité, pas de régie publicitaire</li>
+        <li>Pas de traceur, pas d'outil d'analyse d'audience (Google Analytics, Firebase ou équivalent)</li>
+        <li>Pas de revente ni de partage de données à des tiers à des fins commerciales</li>
+        <li>Pas de suivi entre applications (aucun identifiant publicitaire utilisé)</li>
+      </ul>
+    </section>
+
+    <section>
+      <span class="secnum">05</span>
+      <h2>Tes droits</h2>
+      <p>Comme tes données restent sur ton téléphone, tu en gardes le contrôle direct :</p>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Action</th><th>Comment</th></tr></thead>
+          <tbody>
+            <tr><td>Voir tes données</td><td>Elles sont visibles directement dans l'app (série, niveau, succès…)</td></tr>
+            <tr><td>Tout supprimer</td><td>Réglages → « Supprimer mes données », ou désinstaller l'app</td></tr>
+            <tr><td>Gérer ton abonnement</td><td>Réglages de l'App Store, section Abonnements</td></tr>
+            <tr><td>Question ou demande</td><td><a href="mailto:support@anabasis-technology.com">support@anabasis-technology.com</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Pour toute demande liée au RGPD (accès, rectification, effacement), écris-nous à l'adresse ci-dessus — nous répondons sous 30 jours.</p>
+    </section>
+
+    <section>
+      <span class="secnum">06</span>
+      <h2>Âge minimum</h2>
+      <p>BrainUp ne s'adresse pas spécifiquement aux enfants de moins de 13 ans et ne collecte, comme indiqué ci-dessus, aucune donnée personnelle transmise à un serveur.</p>
+    </section>
+
+    <section>
+      <span class="secnum">07</span>
+      <h2>Modifications de cette politique</h2>
+      <p>Si cette politique évolue, la date de mise à jour en haut de page sera modifiée en conséquence. Un changement notable te sera signalé dans l'app.</p>
+    </section>
+
+    <hr class="rule" />
+
+    <footer>
+      <span class="name">Anabasis Technology</span>
+      <span>9 Rue des Colonnes, 75002 Paris, France</span>
+      <span><a href="mailto:support@anabasis-technology.com">support@anabasis-technology.com</a></span>
+    </footer>
   </div>
 
-  <section>
-    <span class="secnum">01</span>
-    <h2>Le principe : le moins de données possible</h2>
-    <p>BrainUp est conçu pour fonctionner sans compte, sans identifiant, sans profil. Ta série, ton niveau, tes succès et tes préférences sont enregistrés <strong>uniquement sur ton téléphone</strong>, jamais sur un serveur. Si tu supprimes l'app, tout disparaît avec elle.</p>
-  </section>
+  <div data-lang-block="en">
+    <p class="eyebrow">Privacy</p>
+    <h1>Privacy Policy</h1>
+    <p class="lede">What BrainUp does — and especially doesn't do — with your data. Plain and simple, no unnecessary jargon.</p>
 
-  <section>
-    <span class="secnum">02</span>
-    <h2>Ce qui reste sur ton appareil, jamais transmis</h2>
-    <ul>
-      <li>Ton prénom (si tu le renseignes à l'inscription)</li>
-      <li>Ta série, ton niveau, ton score cérébral et tes succès</li>
-      <li>Ton objectif d'entraînement et tes préférences de rythme</li>
-      <li>L'heure de tes rappels quotidiens, gérés par le système de notifications de ton téléphone</li>
-    </ul>
-    <p>Ces informations ne quittent jamais ton appareil. BrainUp n'a ni compte utilisateur, ni base de données, ni serveur qui les reçoit.</p>
-  </section>
-
-  <section>
-    <span class="secnum">03</span>
-    <h2>Ce qui est traité pour l'abonnement Premium</h2>
-    <p>Si tu souscris à BrainUp Premium, l'achat est géré par <strong>Apple</strong> (paiement) et <strong>RevenueCat</strong>, notre prestataire de gestion d'abonnements. RevenueCat reçoit un identifiant anonyme lié à ton appareil et l'historique de tes achats, uniquement pour savoir si ton abonnement est actif — jamais ton nom, ton e-mail ou tes moyens de paiement, que BrainUp ne voit lui-même jamais.</p>
-    <div class="card">
-      <p class="card-title">Sous-traitants concernés</p>
-      <p>Apple (App Store) et RevenueCat, Inc. Consulte leurs politiques respectives : <a href="https://www.apple.com/legal/privacy/fr-ww/" target="_blank" rel="noopener">politique d'Apple</a> et <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">politique de RevenueCat</a>.</p>
+    <div class="meta">
+      <span><strong>Last updated</strong> · July 28, 2026</span>
+      <span><strong>Publisher</strong> · Anabasis Technology</span>
+      <span><strong>Contact</strong> · <a href="mailto:support@anabasis-technology.com">support@anabasis-technology.com</a></span>
     </div>
-  </section>
 
-  <section>
-    <span class="secnum">04</span>
-    <h2>Ce que BrainUp ne fait pas</h2>
-    <ul>
-      <li>Pas de publicité, pas de régie publicitaire</li>
-      <li>Pas de traceur, pas d'outil d'analyse d'audience (Google Analytics, Firebase ou équivalent)</li>
-      <li>Pas de revente ni de partage de données à des tiers à des fins commerciales</li>
-      <li>Pas de suivi entre applications (aucun identifiant publicitaire utilisé)</li>
-    </ul>
-  </section>
+    <section>
+      <span class="secnum">01</span>
+      <h2>The principle: as little data as possible</h2>
+      <p>BrainUp is designed to work without an account, without a login, without a profile. Your streak, level, achievements, and preferences are stored <strong>only on your phone</strong>, never on a server. If you delete the app, everything disappears with it.</p>
+    </section>
 
-  <section>
-    <span class="secnum">05</span>
-    <h2>Tes droits</h2>
-    <p>Comme tes données restent sur ton téléphone, tu en gardes le contrôle direct :</p>
-    <div class="tablewrap">
-      <table>
-        <thead><tr><th>Action</th><th>Comment</th></tr></thead>
-        <tbody>
-          <tr><td>Voir tes données</td><td>Elles sont visibles directement dans l'app (série, niveau, succès…)</td></tr>
-          <tr><td>Tout supprimer</td><td>Réglages → « Supprimer mes données », ou désinstaller l'app</td></tr>
-          <tr><td>Gérer ton abonnement</td><td>Réglages de l'App Store, section Abonnements</td></tr>
-          <tr><td>Question ou demande</td><td><a href="mailto:support@anabasis-technology.com">support@anabasis-technology.com</a></td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p>Pour toute demande liée au RGPD (accès, rectification, effacement), écris-nous à l'adresse ci-dessus — nous répondons sous 30 jours.</p>
-  </section>
+    <section>
+      <span class="secnum">02</span>
+      <h2>What stays on your device, never transmitted</h2>
+      <ul>
+        <li>Your first name (if you provide it during setup)</li>
+        <li>Your streak, level, brain score, and achievements</li>
+        <li>Your training goal and pace preferences</li>
+        <li>The time of your daily reminders, managed by your phone's notification system</li>
+      </ul>
+      <p>This information never leaves your device. BrainUp has no user accounts, no database, and no server that receives it.</p>
+    </section>
 
-  <section>
-    <span class="secnum">06</span>
-    <h2>Âge minimum</h2>
-    <p>BrainUp ne s'adresse pas spécifiquement aux enfants de moins de 13 ans et ne collecte, comme indiqué ci-dessus, aucune donnée personnelle transmise à un serveur.</p>
-  </section>
+    <section>
+      <span class="secnum">03</span>
+      <h2>What's processed for the Premium subscription</h2>
+      <p>If you subscribe to BrainUp Premium, the purchase is handled by <strong>Apple</strong> (payment) and <strong>RevenueCat</strong>, our subscription management provider. RevenueCat receives an anonymous identifier linked to your device and your purchase history, solely to know whether your subscription is active — never your name, email, or payment details, which BrainUp itself never sees.</p>
+      <div class="card">
+        <p class="card-title">Data processors involved</p>
+        <p>Apple (App Store) and RevenueCat, Inc. See their respective policies: <a href="https://www.apple.com/legal/privacy/en-ww/" target="_blank" rel="noopener">Apple's policy</a> and <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat's policy</a>.</p>
+      </div>
+    </section>
 
-  <section>
-    <span class="secnum">07</span>
-    <h2>Modifications de cette politique</h2>
-    <p>Si cette politique évolue, la date de mise à jour en haut de page sera modifiée en conséquence. Un changement notable te sera signalé dans l'app.</p>
-  </section>
+    <section>
+      <span class="secnum">04</span>
+      <h2>What BrainUp doesn't do</h2>
+      <ul>
+        <li>No advertising, no ad network</li>
+        <li>No trackers, no audience analytics tools (Google Analytics, Firebase, or similar)</li>
+        <li>No selling or sharing of data with third parties for commercial purposes</li>
+        <li>No cross-app tracking (no advertising identifier used)</li>
+      </ul>
+    </section>
 
-  <hr class="rule" />
+    <section>
+      <span class="secnum">05</span>
+      <h2>Your rights</h2>
+      <p>Since your data stays on your phone, you keep direct control over it:</p>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Action</th><th>How</th></tr></thead>
+          <tbody>
+            <tr><td>View your data</td><td>It's visible directly in the app (streak, level, achievements…)</td></tr>
+            <tr><td>Delete everything</td><td>Settings → “Delete my data”, or uninstall the app</td></tr>
+            <tr><td>Manage your subscription</td><td>App Store settings, Subscriptions section</td></tr>
+            <tr><td>Question or request</td><td><a href="mailto:support@anabasis-technology.com">support@anabasis-technology.com</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>For any GDPR-related request (access, correction, deletion), write to us at the address above — we respond within 30 days.</p>
+    </section>
 
-  <footer>
-    <span class="name">Anabasis Technology</span>
-    <span>9 Rue des Colonnes, 75002 Paris, France</span>
-    <span><a href="mailto:support@anabasis-technology.com">support@anabasis-technology.com</a></span>
-  </footer>
+    <section>
+      <span class="secnum">06</span>
+      <h2>Minimum age</h2>
+      <p>BrainUp is not specifically directed at children under 13 and does not collect, as noted above, any personal data transmitted to a server.</p>
+    </section>
+
+    <section>
+      <span class="secnum">07</span>
+      <h2>Changes to this policy</h2>
+      <p>If this policy changes, the update date at the top of the page will be revised accordingly. A significant change will be flagged to you in the app.</p>
+    </section>
+
+    <hr class="rule" />
+
+    <footer>
+      <span class="name">Anabasis Technology</span>
+      <span>9 Rue des Colonnes, 75002 Paris, France</span>
+      <span><a href="mailto:support@anabasis-technology.com">support@anabasis-technology.com</a></span>
+    </footer>
+  </div>
 </div>
+
+<script>
+  (function(){
+    var STORAGE_KEY = 'brainup:lang';
+    var titles = { fr: 'BrainUp — Politique de confidentialité', en: 'BrainUp — Privacy Policy' };
+    var blocks = document.querySelectorAll('[data-lang-block]');
+    var buttons = document.querySelectorAll('[data-lang-btn]');
+
+    function apply(lang) {
+      blocks.forEach(function(b){ b.style.display = (b.getAttribute('data-lang-block') === lang) ? '' : 'none'; });
+      buttons.forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-lang-btn') === lang); });
+      document.documentElement.lang = lang;
+      document.title = titles[lang] || titles.fr;
+    }
+
+    function detect() {
+      var saved = null;
+      try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+      if (saved === 'fr' || saved === 'en') return saved;
+      var params = new URLSearchParams(window.location.search);
+      var q = params.get('lang');
+      if (q === 'fr' || q === 'en') return q;
+      var nav = (navigator.language || 'fr').toLowerCase();
+      return nav.indexOf('fr') === 0 ? 'fr' : 'en';
+    }
+
+    buttons.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var lang = btn.getAttribute('data-lang-btn');
+        apply(lang);
+        try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+      });
+    });
+
+    apply(detect());
+  })();
+</script>
