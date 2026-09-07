@@ -214,7 +214,7 @@
     <p class="lede">Ce que Cerbo fait — et surtout ne fait pas — avec tes données. En clair, sans jargon inutile.</p>
 
     <div class="meta">
-      <span><strong>Dernière mise à jour</strong> · 28 juillet 2026</span>
+      <span><strong>Dernière mise à jour</strong> · 7 septembre 2026</span>
       <span><strong>Éditeur</strong> · Anabasis Technology</span>
       <span><strong>Contact</strong> · <a href="mailto:support@anabasis-technology.com">support@anabasis-technology.com</a></span>
     </div>
@@ -222,7 +222,7 @@
     <section>
       <span class="secnum">01</span>
       <h2>Le principe : le moins de données possible</h2>
-      <p>Cerbo est conçu pour fonctionner sans compte, sans identifiant, sans profil. Ta série, ton niveau, tes succès et tes préférences sont enregistrés <strong>uniquement sur ton téléphone</strong>, jamais sur un serveur. Si tu supprimes l'app, tout disparaît avec elle.</p>
+      <p>Cerbo est conçu pour fonctionner sans compte, sans identifiant, sans profil. Ta série, ton niveau, tes succès et tes préférences sont enregistrés <strong>uniquement sur ton téléphone</strong>, jamais sur un serveur. Si tu supprimes l'app, tout disparaît avec elle. En revanche, l'usage de l'application fait l'objet de mesures anonymes, détaillées à la section 04.</p>
     </section>
 
     <section>
@@ -234,7 +234,7 @@
         <li>Ton objectif d'entraînement et tes préférences de rythme</li>
         <li>L'heure de tes rappels quotidiens, gérés par le système de notifications de ton téléphone</li>
       </ul>
-      <p>Ces informations ne quittent jamais ton appareil. Cerbo n'a ni compte utilisateur, ni base de données, ni serveur qui les reçoit.</p>
+      <p>Ces valeurs sont stockées uniquement sur ton téléphone : Cerbo n'a ni compte utilisateur, ni base de données, ni serveur qui les conserve. <strong>Ton prénom, en particulier, n'est transmis nulle part, sous aucune forme.</strong> Certains de ces éléments déclenchent en revanche un événement de mesure anonyme au moment où ils changent &mdash; une série franchie, un rang débloqué, un objectif choisi. La section 04 détaille lesquels.</p>
     </section>
 
     <section>
@@ -249,41 +249,61 @@
 
     <section>
       <span class="secnum">04</span>
+      <h2>Ce qui est mesuré pour améliorer l'app</h2>
+      <p>Pour savoir ce qui fonctionne et ce qui bloque, Cerbo mesure l'usage de l'application avec <strong>PostHog</strong>, un outil d'analyse dont les données sont hébergées dans l'Union européenne. Aucune de ces mesures ne permet de t'identifier.</p>
+      <ul>
+        <li>Des événements d'usage : écran affiché, séance lancée ou terminée, défi répondu, paywall consulté, étape d'onboarding franchie</li>
+        <li>Un identifiant anonyme généré par l'application, propre à ton installation &mdash; jamais l'identifiant publicitaire de ton téléphone</li>
+        <li>Le pays déduit de ton adresse IP, qui n'est elle-même pas conservée, et jamais un niveau plus précis que le pays</li>
+        <li>Des informations techniques : version de l'app, version du système, modèle d'appareil</li>
+        <li>Les journaux de plantage et de performance, pour corriger ce qui casse</li>
+        <li>Des enregistrements de navigation dans l'app, dans lesquels <strong>tout texte saisi et toutes les images sont masqués</strong> avant l'envoi</li>
+      </ul>
+      <p>Ton prénom n'en fait jamais partie : seule l'information &laquo;&nbsp;un prénom a été saisi, ou non&nbsp;&raquo; est transmise.</p>
+      <div class="card">
+        <p class="card-title">Sous-traitant concerné</p>
+        <p>PostHog, hébergement européen. Consulte sa <a href="https://posthog.com/privacy" target="_blank" rel="noopener">politique de confidentialité</a>.</p>
+      </div>
+    </section>
+
+    <section>
+      <span class="secnum">05</span>
       <h2>Ce que Cerbo ne fait pas</h2>
       <ul>
         <li>Pas de publicité, pas de régie publicitaire</li>
-        <li>Pas de traceur, pas d'outil d'analyse d'audience (Google Analytics, Firebase ou équivalent)</li>
+        <li>Pas de traceur publicitaire, pas de profilage à des fins de ciblage</li>
         <li>Pas de revente ni de partage de données à des tiers à des fins commerciales</li>
         <li>Pas de suivi entre applications (aucun identifiant publicitaire utilisé)</li>
       </ul>
     </section>
 
     <section>
-      <span class="secnum">05</span>
+      <span class="secnum">06</span>
       <h2>Tes droits</h2>
-      <p>Comme tes données restent sur ton téléphone, tu en gardes le contrôle direct :</p>
+      <p>L'essentiel de tes données reste sur ton téléphone, tu en gardes donc le contrôle direct. Pour les mesures d'usage, la demande passe par nous :</p>
       <div class="tablewrap">
         <table>
           <thead><tr><th>Action</th><th>Comment</th></tr></thead>
           <tbody>
             <tr><td>Voir tes données</td><td>Elles sont visibles directement dans l'app (série, niveau, succès…)</td></tr>
             <tr><td>Tout supprimer</td><td>Réglages → « Supprimer mes données », ou désinstaller l'app</td></tr>
-            <tr><td>Gérer ton abonnement</td><td>Réglages de l'App Store, section Abonnements</td></tr>
+            <tr><td>Supprimer les mesures d'usage</td><td>Écris-nous : nous effaçons les données rattachées à ton installation chez PostHog et RevenueCat</td></tr>
+          <tr><td>Gérer ton abonnement</td><td>Réglages de l'App Store, section Abonnements</td></tr>
             <tr><td>Question ou demande</td><td><a href="mailto:support@anabasis-technology.com">support@anabasis-technology.com</a></td></tr>
           </tbody>
         </table>
       </div>
-      <p>Pour toute demande liée au RGPD (accès, rectification, effacement), écris-nous à l'adresse ci-dessus — nous répondons sous 30 jours.</p>
-    </section>
-
-    <section>
-      <span class="secnum">06</span>
-      <h2>Âge minimum</h2>
-      <p>Cerbo ne s'adresse pas spécifiquement aux enfants de moins de 13 ans et ne collecte, comme indiqué ci-dessus, aucune donnée personnelle transmise à un serveur.</p>
+      <p>Pour toute demande liée au RGPD (accès, rectification, effacement), écris-nous à l'adresse ci-dessus — nous répondons sous 30 jours. Les événements de mesure sont conservés un an au maximum par notre outil d'analyse, puis supprimés. L'historique d'achat est conservé le temps de la relation contractuelle, conformément aux obligations comptables.</p>
     </section>
 
     <section>
       <span class="secnum">07</span>
+      <h2>Âge minimum</h2>
+      <p>Cerbo s'adresse aux personnes majeures : la tranche d'âge déclarée sur les deux stores est &laquo;&nbsp;18 ans et plus&nbsp;&raquo;. L'application ne demande ni ne transmet de donnée permettant d'identifier une personne.</p>
+    </section>
+
+    <section>
+      <span class="secnum">08</span>
       <h2>Modifications de cette politique</h2>
       <p>Si cette politique évolue, la date de mise à jour en haut de page sera modifiée en conséquence. Un changement notable te sera signalé dans l'app.</p>
     </section>
@@ -303,7 +323,7 @@
     <p class="lede">What Cerbo does — and especially doesn't do — with your data. Plain and simple, no unnecessary jargon.</p>
 
     <div class="meta">
-      <span><strong>Last updated</strong> · July 28, 2026</span>
+      <span><strong>Last updated</strong> · September 7, 2026</span>
       <span><strong>Publisher</strong> · Anabasis Technology</span>
       <span><strong>Contact</strong> · <a href="mailto:support@anabasis-technology.com">support@anabasis-technology.com</a></span>
     </div>
@@ -311,7 +331,7 @@
     <section>
       <span class="secnum">01</span>
       <h2>The principle: as little data as possible</h2>
-      <p>Cerbo is designed to work without an account, without a login, without a profile. Your streak, level, achievements, and preferences are stored <strong>only on your phone</strong>, never on a server. If you delete the app, everything disappears with it.</p>
+      <p>Cerbo is designed to work without an account, without a login, without a profile. Your streak, level, achievements, and preferences are stored <strong>only on your phone</strong>, never on a server. If you delete the app, everything disappears with it. App usage, however, is measured anonymously &mdash; see section 04.</p>
     </section>
 
     <section>
@@ -323,7 +343,7 @@
         <li>Your training goal and pace preferences</li>
         <li>The time of your daily reminders, managed by your phone's notification system</li>
       </ul>
-      <p>This information never leaves your device. Cerbo has no user accounts, no database, and no server that receives it.</p>
+      <p>These values are stored on your phone only: Cerbo has no user account, no database and no server that keeps them. <strong>Your first name in particular is never transmitted, in any form.</strong> Some of these items do, however, trigger an anonymous measurement event when they change &mdash; a streak reached, a rank unlocked, a goal chosen. Section 04 sets out which ones.</p>
     </section>
 
     <section>
@@ -338,41 +358,61 @@
 
     <section>
       <span class="secnum">04</span>
+      <h2>What we measure to improve the app</h2>
+      <p>To learn what works and what gets in the way, Cerbo measures app usage with <strong>PostHog</strong>, an analytics tool whose data is hosted in the European Union. None of these measurements can identify you.</p>
+      <ul>
+        <li>Usage events: screen viewed, session started or completed, challenge answered, paywall shown, onboarding step reached</li>
+        <li>An anonymous identifier generated by the app, specific to your installation &mdash; never your phone's advertising identifier</li>
+        <li>The country derived from your IP address, which is not itself stored, and never anything more precise than the country</li>
+        <li>Technical information: app version, OS version, device model</li>
+        <li>Crash and performance logs, to fix what breaks</li>
+        <li>Recordings of navigation inside the app, in which <strong>all entered text and all images are masked</strong> before being sent</li>
+      </ul>
+      <p>Your first name is never part of it: only whether &ldquo;a first name was entered, or not&rdquo; is transmitted.</p>
+      <div class="card">
+        <p class="card-title">Data processor involved</p>
+        <p>PostHog, European hosting. See its <a href="https://posthog.com/privacy" target="_blank" rel="noopener">privacy policy</a>.</p>
+      </div>
+    </section>
+
+    <section>
+      <span class="secnum">05</span>
       <h2>What Cerbo doesn't do</h2>
       <ul>
         <li>No advertising, no ad network</li>
-        <li>No trackers, no audience analytics tools (Google Analytics, Firebase, or similar)</li>
+        <li>No advertising trackers, no profiling for targeting purposes</li>
         <li>No selling or sharing of data with third parties for commercial purposes</li>
         <li>No cross-app tracking (no advertising identifier used)</li>
       </ul>
     </section>
 
     <section>
-      <span class="secnum">05</span>
+      <span class="secnum">06</span>
       <h2>Your rights</h2>
-      <p>Since your data stays on your phone, you keep direct control over it:</p>
+      <p>Most of your data stays on your phone, so you keep direct control over it. For usage measurements, the request goes through us:</p>
       <div class="tablewrap">
         <table>
           <thead><tr><th>Action</th><th>How</th></tr></thead>
           <tbody>
             <tr><td>View your data</td><td>It's visible directly in the app (streak, level, achievements…)</td></tr>
             <tr><td>Delete everything</td><td>Settings → “Delete my data”, or uninstall the app</td></tr>
+            <tr><td>Delete usage measurements</td><td>Write to us: we erase the data attached to your installation at PostHog and RevenueCat</td></tr>
             <tr><td>Manage your subscription</td><td>App Store settings, Subscriptions section</td></tr>
             <tr><td>Question or request</td><td><a href="mailto:support@anabasis-technology.com">support@anabasis-technology.com</a></td></tr>
           </tbody>
         </table>
       </div>
-      <p>For any GDPR-related request (access, correction, deletion), write to us at the address above — we respond within 30 days.</p>
-    </section>
-
-    <section>
-      <span class="secnum">06</span>
-      <h2>Minimum age</h2>
-      <p>Cerbo is not specifically directed at children under 13 and does not collect, as noted above, any personal data transmitted to a server.</p>
+      <p>For any GDPR-related request (access, correction, deletion), write to us at the address above — we respond within 30 days. Measurement events are kept for at most one year by our analytics tool, then deleted. Purchase history is kept for the duration of the contractual relationship, in line with accounting obligations.</p>
     </section>
 
     <section>
       <span class="secnum">07</span>
+      <h2>Minimum age</h2>
+      <p>Cerbo is intended for adults: the age range declared on both stores is &ldquo;18 and over&rdquo;. The app neither asks for nor transmits data that could identify a person.</p>
+    </section>
+
+    <section>
+      <span class="secnum">08</span>
       <h2>Changes to this policy</h2>
       <p>If this policy changes, the update date at the top of the page will be revised accordingly. A significant change will be flagged to you in the app.</p>
     </section>
