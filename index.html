@@ -435,7 +435,7 @@
     var buttons = document.querySelectorAll('[data-lang-btn]');
 
     function apply(lang) {
-      blocks.forEach(function(b){ b.style.display = (b.getAttribute('data-lang-block') === lang) ? '' : 'none'; });
+      blocks.forEach(function(b){ b.style.display = (b.getAttribute('data-lang-block') === lang) ? 'block' : 'none'; });
       buttons.forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-lang-btn') === lang); });
       document.documentElement.lang = lang;
       document.title = titles[lang] || titles.fr;
